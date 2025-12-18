@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Needs & Solutions | Technology Services & Project Solutions</title>
+    <meta name="description" content="Needs & Solutions provides premium technology services and innovative project solutions for businesses worldwide.">
+    <meta name="keywords" content="technology services, project solutions, web development, software solutions, IT consulting">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logo.jpg">
+
+    <style>
+        /* ===== CSS Reset & Base Styles ===== */
+        :root {
+            --primary-blue: #0a2463;
+            --secondary-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --very-light-blue: #dbeafe;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --dark-gray: #1e293b;
+            --medium-gray: #64748b;
+            --light-gray: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 100, 0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --header-height: 80px;
+            --glass-bg: rgba(255, 255, 255, 0.92);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--light-blue));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--medium-gray);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            background: linear-gradient(135deg, var(--secondary-blue), var(--accent-blue));
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 100, 0.05);
+            z-index: 1000;
+            height: var(--header-height);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            border-radius: 8px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            animation: logoPulse 4s infinite ease-in-out;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* ===== Hero Section ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 85vh;            /* FIX 2: taller hero */
+    display: flex;
+    align-items: center;
+}
+
+/* Background image */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("bg.jpg") center / cover no-repeat;
+    z-index: -1;
+}
+
+/* Light blur + soft dark overlay */
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0px);          /* LIGHT BLUR */
+    -webkit-backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0.35);      /* LIGHT DARKEN */
+}
+
+/* Subtle premium glow */
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 25% 75%, rgba(59,130,246,0.18), transparent 55%),
+        radial-gradient(circle at 75% 25%, rgba(124,58,237,0.18), transparent 55%);
+    pointer-events: none;
+}
+
+
+        .hero-content {
+    max-width: 720px;
+    padding: 80px 0;          /* breathing space */
+    color: #ffffff;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 90px 0;
+    color: #ffffff; /* pure white */
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.45),
+        0 8px 28px rgba(0,0,0,0.55);
+}
+
+
+
+        .hero-content h1 {
+    font-size: clamp(2.8rem, 4vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: #f8f8ff;
+}
+
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--medium-gray);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== NEW: Premium Services Section ===== */
+        .services {
+            background: linear-gradient(135deg, var(--off-white) 0%, rgba(219, 234, 254, 0.3) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0;
+        }
+
+        .services-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.1;
+        }
+
+        .services-bg:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 90% 90%, rgba(10, 36, 99, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.15) 0%, transparent 40%);
+        }
+
+        .services-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Service Category Navigation */
+        .service-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .category-tab {
+            padding: 14px 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(10, 36, 99, 0.08);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 100, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .category-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 100, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .category-tab.active {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .category-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Service Content Area */
+        .service-content-wrapper {
+            position: relative;
+            min-height: 600px;
+            margin-bottom: 40px;
+        }
+
+        .service-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 0, 100, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: none;
+        }
+
+        .service-content.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+            position: relative;
+        }
+
+        .service-header {
+            padding: 40px 40px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-header-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        /* Service Cards Grid */
+        .service-subcategories {
+            padding: 30px 40px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--light-blue));
+            transition: width 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 100, 0.1);
+        }
+
+        .service-card:hover:before {
+            width: 8px;
+        }
+
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .service-card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--very-light-blue), var(--light-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        .service-card-title {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .service-card-subtitle {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .service-card-content {
+            margin-bottom: 25px;
+        }
+
+        .service-card-content p {
+            margin-bottom: 15px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        .service-card-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-card-content li {
+            margin-bottom: 8px;
+            color: var(--medium-gray);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-card-content li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Tech Stack Tags */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: var(--very-light-blue);
+            color: var(--primary-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .clients-list {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .clients-list h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .clients-list ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-left: 0;
+        }
+
+        .clients-list li {
+            background: rgba(10, 36, 99, 0.05);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--secondary-blue);
+        }
+
+        /* Case Study Highlight */
+        .case-study {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.03), rgba(59, 130, 246, 0.05));
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .case-study h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .case-study-icon {
+            color: var(--accent-blue);
+        }
+
+        /* Service Stats */
+        .service-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 10px 20px rgba(0, 0, 100, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 100, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--medium-gray);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Projects Section ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-img {
+            height: 220px;
+            background: linear-gradient(135deg, #a5b4fc, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .view-all {
+            text-align: center;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact {
+            background-color: var(--off-white);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-container p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-blue);
+            animation: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links h3, .footer-social h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            .hero-buttons { flex-direction: column; align-items: flex-start; }
+            .service-subcategories { grid-template-columns: 1fr; }
+            .service-stats { gap: 20px; }
+            .stat-box { min-width: 170px; padding: 25px; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            nav { position: fixed; top: var(--header-height); left: -100%; width: 80%; height: calc(100vh - var(--header-height)); background: white; transition: var(--transition); box-shadow: var(--shadow); }
+            nav.active { left: 0; }
+            nav ul { flex-direction: column; padding: 30px; }
+            nav li { margin: 0 0 20px 0; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 70px 0; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .service-categories { gap: 10px; }
+            .category-tab { padding: 12px 20px; font-size: 0.9rem; }
+            .service-header, .service-subcategories { padding: 30px 20px; }
+            .service-header h3 { font-size: 1.7rem; }
+            .service-header-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+            .service-content-wrapper { min-height: 700px; }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .container { padding: 0 15px; }
+            .btn { padding: 12px 24px; }
+            .service-categories { flex-direction: column; align-items: center; }
+            .category-tab { width: 100%; max-width: 300px; justify-content: center; }
+            .stat-box { min-width: 100%; }
+            .service-stats { gap: 15px; }
+            .service-content-wrapper { min-height: 800px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"> N&S </div>
+                Needs & Solutions
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="projects.html">All Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Needs & Solutions</h1>
+                <p>We transform complex business challenges into innovative technology solutions. As a premium technology partner, we combine strategic thinking with technical excellence to deliver projects that drive growth, efficiency, and competitive advantage.</p>
+                <p>Our ambition is to become the most trusted technology partner for forward-thinking businesses. We're motivated by solving difficult problems and driven by an innovation mindset that constantly explores new possibilities.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn">Explore Services</a>
+                    <a href="#projects" class="btn btn">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEW Premium Services Section ===== -->
+    <section id="services" class="services">
+        <div class="services-bg"></div>
+        <div class="container services-container">
+            <div class="section-title reveal">
+                <h2>Our Technology Services</h2>
+                <p>Enterprise-grade solutions combining cutting-edge technology with strategic implementation</p>
+            </div>
+            
+            <!-- Service Category Navigation -->
+            <div class="service-categories reveal">
+                <div class="category-tab active" data-category="web">
+                    <i class="fas fa-globe category-icon"></i>
+                    Web Development
+                </div>
+                <div class="category-tab" data-category="ai">
+                    <i class="fas fa-brain category-icon"></i>
+                    AI & ML Solutions
+                </div>
+                <div class="category-tab" data-category="automation">
+                    <i class="fas fa-robot category-icon"></i>
+                    Automation
+                </div>
+                <div class="category-tab" data-category="mobile">
+                    <i class="fas fa-mobile-alt category-icon"></i>
+                    Mobile Apps
+                </div>
+                <div class="category-tab" data-category="database">
+                    <i class="fas fa-database category-icon"></i>
+                    Database & Backend
+                </div>
+                <div class="category-tab" data-category="security">
+                    <i class="fas fa-shield-alt category-icon"></i>
+                    Cybersecurity
+                </div>
+                <div class="category-tab" data-category="cloud">
+                    <i class="fas fa-cloud category-icon"></i>
+                    Cloud & Deployment
+                </div>
+                <div class="category-tab" data-category="academic">
+                    <i class="fas fa-graduation-cap category-icon"></i>
+                    Academic Support
+                </div>
+                <div class="category-tab" data-category="support">
+                    <i class="fas fa-tools category-icon"></i>
+                    Maintenance
+                </div>
+            </div>
+            
+            <!-- Service Content Wrapper - All services pre-loaded -->
+            <div class="service-content-wrapper" id="service-content-wrapper">
+                <!-- Web Development Service -->
+                <div class="service-content active" id="web-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            Web Development Services
+                        </h3>
+                        <p class="service-description">
+                            Full-spectrum web solutions from responsive business websites to complex enterprise applications, 
+                            built with modern frameworks and scalable architectures.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Static & Dynamic Websites -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Static & Dynamic Websites</h4>
+                                    <p class="service-card-subtitle">Professional online presence</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Custom-designed websites that deliver exceptional user experiences and drive business objectives.</p>
+                                <ul>
+                                    <li>Business & corporate websites</li>
+                                    <li>Portfolio & showcase websites</li>
+                                    <li>Landing pages & campaign sites</li>
+                                    <li>Event & promotional websites</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Django</span>
+                            </div>
+                            
+                            <div class="clients-list">
+                                <h4><i class="fas fa-user-tie"></i> Ideal Clients</h4>
+                                <ul>
+                                    <li>Small Businesses</li>
+                                    <li>Startups</li>
+                                    <li>Professionals</li>
+                                    <li>Enterprises</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Full-Stack Web Applications -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Full-Stack Web Applications</h4>
+                                    <p class="service-card-subtitle">Custom business solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>End-to-end web applications that streamline operations, enhance productivity, and provide competitive advantages.</p>
+                                <ul>
+                                    <li>Admin dashboards & control panels</li>
+                                    <li>CRM & customer management systems</li>
+                                    <li>Booking & reservation systems</li>
+                                    <li>Custom business tools & platforms</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Flask/Django</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h4><i class="fas fa-chart-line case-study-icon"></i> Business Impact</h4>
+                                <p>Our web applications typically deliver 40-60% improvement in operational efficiency and 30% reduction in manual processing time.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- UI/UX Design -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">UI/UX Design</h4>
+                                    <p class="service-card-subtitle">User-centered design excellence</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Creating intuitive, engaging interfaces that drive user adoption and satisfaction while aligning with business goals.</p>
+                                <ul>
+                                    <li>Website UI redesign & modernization</li>
+                                    <li>Mobile-first responsive layouts</li>
+                                    <li>Interactive animations & micro-interactions</li>
+                                    <li>Dashboard & admin panel UI design</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">CSS Animations</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">Adobe XD</span>
+                            </div>
+                            
+                            <div class="clients-list">
+                                <h4><i class="fas fa-bullseye"></i> Design Focus</h4>
+                                <ul>
+                                    <li>Conversion Optimization</li>
+                                    <li>User Retention</li>
+                                    <li>Accessibility</li>
+                                    <li>Brand Consistency</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI & ML Solutions Service -->
+                <div class="service-content" id="ai-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            AI & Machine Learning Solutions
+                        </h3>
+                        <p class="service-description">
+                            Transform your business with intelligent systems that learn, predict, and automate. 
+                            From predictive analytics to computer vision, we build AI solutions that deliver measurable ROI.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- AI Model Development -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">AI Model Development</h4>
+                                    <p class="service-card-subtitle">Predictive intelligence systems</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Custom AI models that analyze patterns, predict outcomes, and generate actionable insights for strategic decision-making.</p>
+                                <ul>
+                                    <li>Stock, Forex & Crypto price prediction</li>
+                                    <li>Demand & supply forecasting models</li>
+                                    <li>Recommendation & personalization systems</li>
+                                    <li>Classification & prediction models</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">LSTM</span>
+                                <span class="tech-tag">PyTorch</span>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h4><i class="fas fa-rocket case-study-icon"></i> Performance Metrics</h4>
+                                <p>Our prediction models typically achieve 85-95% accuracy with continuous learning capabilities for improving performance over time.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- AI-Powered Web Applications -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">AI-Powered Web Applications</h4>
+                                    <p class="service-card-subtitle">Intelligent digital experiences</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Web applications enhanced with AI capabilities for smarter interactions, automation, and personalized user experiences.</p>
+                                <ul>
+                                    <li>AI chatbots & virtual assistants</li>
+                                    <li>Intelligent search & recommendation engines</li>
+                                    <li>Emotion & sentiment detection systems</li>
+                                    <li>Face recognition & computer vision</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">TensorFlow.js</span>
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">NLP</span>
+                            </div>
+                            
+                            <div class="clients-list">
+                                <h4><i class="fas fa-industry"></i> Industry Applications</h4>
+                                <ul>
+                                    <li>E-commerce</li>
+                                    <li>Education Platforms</li>
+                                    <li>Healthcare</li>
+                                    <li>Video Conferencing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Analysis & Visualization -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Data Analysis & Visualization</h4>
+                                    <p class="service-card-subtitle">Insight-driven decision making</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Transform raw data into compelling visual narratives that reveal trends, opportunities, and areas for optimization.</p>
+                                <ul>
+                                    <li>Business intelligence dashboards</li>
+                                    <li>Sales trend & performance analysis</li>
+                                    <li>Data cleaning & preprocessing pipelines</li>
+                                    <li>Dynamic reports & interactive charts</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                                <span class="tech-tag">Plotly</span>
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Tableau</span>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h4><i class="fas fa-lightbulb case-study-icon"></i> Business Value</h4>
+                                <p>Clients report 30-50% faster decision-making and 25% improvement in operational efficiency with our data visualization solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Automation & Scripting Service -->
+                <div class="service-content" id="automation-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            Automation & Scripting Solutions
+                        </h3>
+                        <p class="service-description">
+                            Streamline operations, reduce manual work, and boost productivity with intelligent automation 
+                            solutions and smart AI agents that handle repetitive tasks efficiently.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Business Process Automation -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Business Process Automation</h4>
+                                    <p class="service-card-subtitle">Streamline operations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Automate repetitive tasks and workflows to increase efficiency, reduce errors, and free up valuable human resources.</p>
+                                <ul>
+                                    <li>Report generation automation</li>
+                                    <li>Web scraping & data processing</li>
+                                    <li>Email automation & notification systems</li>
+                                    <li>File processing & workflow automation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Selenium</span>
+                                <span class="tech-tag">APIs</span>
+                                <span class="tech-tag">Automation Scripts</span>
+                                <span class="tech-tag">Task Schedulers</span>
+                            </div>
+                            
+                            <div class="case-study">
+                                <h4><i class="fas fa-chart-line case-study-icon"></i> Efficiency Gains</h4>
+                                <p>Automation solutions typically reduce manual processing time by 70-90% and eliminate human error in repetitive tasks.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Agents & Smart Assistants -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">AI Agents & Smart Assistants</h4>
+                                    <p class="service-card-subtitle">Intelligent automation systems</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Advanced AI-powered agents that understand context, make decisions, and automate complex workflows intelligently.</p>
+                                <ul>
+                                    <li>Customer support & service agents</li>
+                                    <li>Task automation & workflow agents</li>
+                                    <li>Lead qualification & scoring bots</li>
+                                    <li>Monitoring & alert systems</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">AI Agents</span>
+                                <span class="tech-tag">LLM Integration</span>
+                                <span class="tech-tag">Workflow Automation</span>
+                                <span class="tech-tag">Decision Systems</span>
+                            </div>
+                            
+                            <div class="clients-list">
+                                <h4><i class="fas fa-bolt"></i> Trending Applications</h4>
+                                <ul>
+                                    <li>Customer Service</li>
+                                    <li>Sales Automation</li>
+                                    <li>IT Operations</li>
+                                    <li>Process Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile App Development Service -->
+                <div class="service-content" id="mobile-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            Mobile App Development
+                        </h3>
+                        <p class="service-description">
+                            Native and cross-platform mobile applications that deliver exceptional user experiences, 
+                            high performance, and seamless integration with existing systems.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Android Business Apps -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fab fa-android"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Android Business & Utility Apps</h4>
+                                    <p class="service-card-subtitle">Native Android solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>High-performance Android applications tailored for business operations, productivity, and customer engagement.</p>
+                                <ul>
+                                    <li>Business management tools</li>
+                                    <li>Utility & productivity apps</li>
+                                    <li>Field service applications</li>
+                                    <li>Customer-facing mobile solutions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Android Studio</span>
+                                <span class="tech-tag">Material Design</span>
+                            </div>
+                        </div>
+                        
+                        <!-- AI-Integrated Mobile Apps -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">AI-Integrated Mobile Apps</h4>
+                                    <p class="service-card-subtitle">Smart mobile experiences</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Mobile applications enhanced with AI capabilities for personalized experiences, intelligent features, and smart automation.</p>
+                                <ul>
+                                    <li>AI-powered personal assistants</li>
+                                    <li>Intelligent recommendation systems</li>
+                                    <li>Image & speech recognition apps</li>
+                                    <li>Predictive analytics on mobile</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">TensorFlow Lite</span>
+                                <span class="tech-tag">ML Kit</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Admin & Analytics Apps -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Admin & Analytics Apps</h4>
+                                    <p class="service-card-subtitle">Mobile management tools</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Mobile applications for administrators and managers to monitor performance, analyze data, and make decisions on-the-go.</p>
+                                <ul>
+                                    <li>Real-time monitoring dashboards</li>
+                                    <li>Performance analytics tools</li>
+                                    <li>Approval & workflow management</li>
+                                    <li>Remote administration panels</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database & Backend Services -->
+                <div class="service-content" id="database-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            Database & Backend Services
+                        </h3>
+                        <p class="service-description">
+                            Robust, scalable, and secure backend systems that power your applications, 
+                            ensuring data integrity, performance, and seamless integration.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Database Design & Optimization -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Database Design & Optimization</h4>
+                                    <p class="service-card-subtitle">Scalable data architecture</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Design, implementation, and optimization of database systems for performance, scalability, and reliability.</p>
+                                <ul>
+                                    <li>Database schema design & normalization</li>
+                                    <li>Query optimization & indexing</li>
+                                    <li>Performance tuning & monitoring</li>
+                                    <li>Migration & consolidation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">SQLAlchemy</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        
+                        <!-- API Development -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">API Development</h4>
+                                    <p class="service-card-subtitle">Seamless integration</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Design and development of RESTful APIs that enable seamless communication between different systems and services.</p>
+                                <ul>
+                                    <li>REST API design & development</li>
+                                    <li>Third-party API integration</li>
+                                    <li>Webhook implementation</li>
+                                    <li>API documentation & testing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Django REST</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">Swagger/OpenAPI</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Authentication & Security -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Authentication & Security Systems</h4>
+                                    <p class="service-card-subtitle">Secure access control</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Implementation of secure authentication, authorization, and access control systems to protect your applications and data.</p>
+                                <ul>
+                                    <li>JWT-based authentication</li>
+                                    <li>OAuth 2.0 & OpenID Connect</li>
+                                    <li>Role-based access control (RBAC)</li>
+                                    <li>Multi-factor authentication</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">JWT</span>
+                                <span class="tech-tag">OAuth 2.0</span>
+                                <span class="tech-tag">RBAC</span>
+                                <span class="tech-tag">Session Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity Service -->
+                <div class="service-content" id="security-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            Cybersecurity & Networking
+                        </h3>
+                        <p class="service-description">
+                            Comprehensive security solutions to protect your digital assets, ensure compliance, 
+                            and build trust with your customers through robust security practices.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Security Audits -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Basic Security Audits</h4>
+                                    <p class="service-card-subtitle">Vulnerability assessment</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Comprehensive security assessments to identify vulnerabilities, assess risks, and recommend mitigation strategies.</p>
+                                <ul>
+                                    <li>Application security testing</li>
+                                    <li>Network vulnerability scanning</li>
+                                    <li>Security compliance assessment</li>
+                                    <li>Penetration testing basics</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Security Scanners</span>
+                                <span class="tech-tag">Vulnerability Assessment</span>
+                                <span class="tech-tag">Compliance Tools</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Secure Authentication Systems -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Secure Authentication Systems</h4>
+                                    <p class="service-card-subtitle">Advanced access control</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Implementation of advanced authentication and authorization systems to protect against unauthorized access.</p>
+                                <ul>
+                                    <li>Multi-factor authentication setup</li>
+                                    <li>Biometric authentication</li>
+                                    <li>Single sign-on (SSO) implementation</li>
+                                    <li>Passwordless authentication</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">MFA</span>
+                                <span class="tech-tag">SSO</span>
+                                <span class="tech-tag">Biometric Auth</span>
+                                <span class="tech-tag">OAuth 2.0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Network & Cybersecurity -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Network Setup & Consultation</h4>
+                                    <p class="service-card-subtitle">Secure network infrastructure</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Design, setup, and consultation for secure network infrastructure and cybersecurity awareness programs.</p>
+                                <ul>
+                                    <li>Secure network architecture design</li>
+                                    <li>Firewall configuration & management</li>
+                                    <li>VPN setup & security</li>
+                                    <li>Cybersecurity training & awareness</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Network Security</span>
+                                <span class="tech-tag">Firewalls</span>
+                                <span class="tech-tag">VPN</span>
+                                <span class="tech-tag">Security Training</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cloud & Deployment Service -->
+                <div class="service-content" id="cloud-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            Cloud & Deployment Services
+                        </h3>
+                        <p class="service-description">
+                            Seamless deployment, scalable cloud infrastructure, and continuous delivery pipelines 
+                            that ensure your applications run reliably and efficiently in production environments.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Website Deployment -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Website Deployment</h4>
+                                    <p class="service-card-subtitle">Production-ready hosting</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Professional deployment of websites and web applications to production environments with optimal performance and reliability.</p>
+                                <ul>
+                                    <li>Static site deployment</li>
+                                    <li>Dynamic application hosting</li>
+                                    <li>SSL certificate installation</li>
+                                    <li>Domain configuration & DNS setup</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Vercel</span>
+                                <span class="tech-tag">Netlify</span>
+                                <span class="tech-tag">GitHub Pages</span>
+                                <span class="tech-tag">Render</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend Server Setup -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Backend Server Setup</h4>
+                                    <p class="service-card-subtitle">Scalable server infrastructure</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Setup and configuration of backend servers, APIs, and databases in cloud environments with optimal performance and security.</p>
+                                <ul>
+                                    <li>Cloud server provisioning</li>
+                                    <li>Load balancing setup</li>
+                                    <li>Auto-scaling configuration</li>
+                                    <li>Server monitoring & logging</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Azure</span>
+                                <span class="tech-tag">Google Cloud</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CI/CD Pipeline Setup -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">CI/CD Pipeline Setup</h4>
+                                    <p class="service-card-subtitle">Automated deployment workflows</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Implementation of continuous integration and continuous deployment pipelines for automated testing and deployment.</p>
+                                <ul>
+                                    <li>Automated testing integration</li>
+                                    <li>Deployment automation</li>
+                                    <li>Environment management</li>
+                                    <li>Rollback strategies</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">GitHub Actions</span>
+                                <span class="tech-tag">Jenkins</span>
+                                <span class="tech-tag">GitLab CI</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Academic & Startup Support Service -->
+                <div class="service-content" id="academic-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            Academic & Startup Support
+                        </h3>
+                        <p class="service-description">
+                            Specialized support for students and startups, from academic project development 
+                            to MVP creation, helping turn ideas into reality with technical excellence.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Final Year Projects -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Final Year Projects</h4>
+                                    <p class="service-card-subtitle">Academic excellence</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Comprehensive support for final year engineering and computer science projects with complete implementation and documentation.</p>
+                                <ul>
+                                    <li>AI/ML based projects</li>
+                                    <li>Web & mobile application projects</li>
+                                    <li>Complete project reports & documentation</li>
+                                    <li>IEEE-format technical papers</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Academic Projects</span>
+                                <span class="tech-tag">IEEE Format</span>
+                                <span class="tech-tag">Project Documentation</span>
+                                <span class="tech-tag">Research Papers</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Startup MVP Development -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Startup MVP Development</h4>
+                                    <p class="service-card-subtitle">Idea to market execution</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Rapid development of Minimum Viable Products (MVPs) to validate business ideas, attract investors, and gather user feedback.</p>
+                                <ul>
+                                    <li>Idea validation & prototyping</li>
+                                    <li>MVP development & deployment</li>
+                                    <li>Technical consultation & architecture</li>
+                                    <li>Investor-ready demos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">MVP Development</span>
+                                <span class="tech-tag">Rapid Prototyping</span>
+                                <span class="tech-tag">Lean Methodology</span>
+                                <span class="tech-tag">Pitch Deck Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Maintenance & Support Service -->
+                <div class="service-content" id="support-service">
+                    <div class="service-header">
+                        <h3>
+                            <div class="service-header-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            Maintenance & Support Services
+                        </h3>
+                        <p class="service-description">
+                            Ongoing support, maintenance, and optimization services to ensure your 
+                            applications run smoothly, securely, and efficiently over time.
+                        </p>
+                    </div>
+                    
+                    <div class="service-subcategories">
+                        <!-- Website Maintenance -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-wrench"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Website Maintenance</h4>
+                                    <p class="service-card-subtitle">Ongoing support & updates</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Regular maintenance, updates, and support to keep your website running smoothly, securely, and up-to-date.</p>
+                                <ul>
+                                    <li>Regular updates & patches</li>
+                                    <li>Content updates & management</li>
+                                    <li>Security monitoring & updates</li>
+                                    <li>Backup management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Updates</span>
+                                <span class="tech-tag">Patches</span>
+                                <span class="tech-tag">Security</span>
+                                <span class="tech-tag">Backup</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Bug Fixing & Optimization -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-bug"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Bug Fixing & Performance Optimization</h4>
+                                    <p class="service-card-subtitle">Issue resolution & improvement</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Identification and resolution of bugs, performance issues, and optimization opportunities to improve application reliability and speed.</p>
+                                <ul>
+                                    <li>Bug identification & fixing</li>
+                                    <li>Performance profiling & optimization</li>
+                                    <li>Code refactoring & improvement</li>
+                                    <li>Load testing & optimization</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Debugging</span>
+                                <span class="tech-tag">Performance Tuning</span>
+                                <span class="tech-tag">Code Optimization</span>
+                                <span class="tech-tag">Testing</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Feature Upgrades -->
+                        <div class="service-card">
+                            <div class="service-card-header">
+                                <div class="service-card-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="service-card-title">Feature Upgrades & Enhancements</h4>
+                                    <p class="service-card-subtitle">Continuous improvement</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-card-content">
+                                <p>Addition of new features, enhancements, and improvements to keep your applications competitive and aligned with business needs.</p>
+                                <ul>
+                                    <li>New feature development</li>
+                                    <li>User interface improvements</li>
+                                    <li>Integration with new services</li>
+                                    <li>Technology stack upgrades</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Feature Development</span>
+                                <span class="tech-tag">UI/UX Improvements</span>
+                                <span class="tech-tag">Integration</span>
+                                <span class="tech-tag">Upgrades</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Stats -->
+            <div class="service-stats reveal">
+                <div class="stat-box">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Service Domains</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Latest Featured Projects</h2>
+                <p>Some of our successfully delivered technology solutions</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card reveal">
+                    <div class="project-img">
+    <img src="1.jpeg" alt="Project Image">
+</div>
+
+                    <div class="project-content">
+                        <h3>BizNest Pro – Smart Business Website Platform</h3>
+                        <p>Clean, responsive business website explaining services clearly, showcasing credibility, and enabling instant WhatsApp contact with mobile-first design.</p>
+                        <a href="projects.html" class="btn" style="padding: 10px 20px; margin-top: 15px; font-size: 0.9rem;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="project-card reveal">
+                    <div class="project-img">
+    <img src="2.jpg" alt="Project Image">
+</div>
+                    <div class="project-content">
+                        <h3>DemandSense AI – Retail Demand Forecasting</h3>
+                        <p>AI-based system analyzing past sales data to predict future demand, converting complex data into easy-to-understand forecasts.</p>
+                        <a href="projects.html" class="btn" style="padding: 10px 20px; margin-top: 15px; font-size: 0.9rem;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="project-card reveal">
+                    <div class="project-img">
+    <img src="3.jpg" alt="Project Image">
+</div>
+                    <div class="project-content">
+                        <h3>LeadBotix – Smart Inquiry Automation Agent</h3>
+                        <p>AI-powered inquiry handling agent that interacts with visitors, asks relevant questions, and filters serious leads automatically.</p>
+                        <a href="projects.html" class="btn" style="padding: 10px 20px; margin-top: 15px; font-size: 0.9rem;">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all reveal">
+                <a href="projects.html" class="btn btn-secondary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container reveal">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Contact us today to discuss how we can help solve your technology challenges and drive innovation in your organization.</p>
+                <a href="https://wa.me/917039095763?text=Hello%20Needs%20%26%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" class="btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aryanmejari1406@gmail.com&su=Project%20Inquiry&body=Hello%20Needs%20%26%20Solutions%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project.%0A%0ARegards%2C"
+   target="_blank"
+   class="btn email-btn">
+    <i class="fas fa-envelope"></i> Email Us
+</a>
+
+<a href="https://www.linkedin.com/in/aryan-mejari-5b73862b9/"
+   target="_blank"
+   class="btn linkedin-btn">
+    <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">N&S</div>
+                        Needs & Solutions
+                    </div>
+                    <p>Providing premium technology services and innovative project solutions for businesses worldwide since 2015.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="termsandcondition.html">Terms and Conditions</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Needs & Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+            
+            revealElements.forEach(element => {
+                const revealTop = element.getBoundingClientRect().top;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 25px rgba(0, 0, 100, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 100, 0.05)';
+                header.style.height = '80px';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Service Tab Switching - Fixed gap issue
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const serviceContents = document.querySelectorAll('.service-content');
+            const serviceContentWrapper = document.getElementById('service-content-wrapper');
+            
+            // Set initial height for wrapper based on active content
+            function updateWrapperHeight() {
+                const activeContent = document.querySelector('.service-content.active');
+                if (activeContent) {
+                    const height = activeContent.offsetHeight;
+                    serviceContentWrapper.style.height = height + 'px';
+                }
+            }
+            
+            // Update height on window resize
+            window.addEventListener('resize', updateWrapperHeight);
+            
+            // Initialize with current height
+            setTimeout(updateWrapperHeight, 100);
+            
+            // Tab switching functionality
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active tab
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Remove active class from all service contents
+                    serviceContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Add active class to target service content
+                    const targetContent = document.getElementById(`${category}-service`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                        
+                        // Update wrapper height after transition
+                        setTimeout(() => {
+                            updateWrapperHeight();
+                        }, 50);
+                    }
+                    
+                    // Update reveal elements for new content
+                    revealOnScroll();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

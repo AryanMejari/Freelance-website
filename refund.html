@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | Needs & Solutions</title>
+    <meta name="description" content="Refund Policy for Needs & Solutions services and projects">
+    <meta name="keywords" content="refund policy, no refund policy, payment terms, cancellation policy">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse your existing CSS with some modifications for legal pages */
+        :root {
+            --primary-blue: #0a2463;
+            --secondary-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --very-light-blue: #dbeafe;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --dark-gray: #1e293b;
+            --medium-gray: #64748b;
+            --light-gray: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 100, 0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --header-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 100, 0.05);
+            z-index: 1000;
+            height: var(--header-height);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            border-radius: 8px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            animation: logoPulse 4s infinite ease-in-out;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* Legal Page Specific Styles */
+        .legal-hero {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.05) 0%, rgba(30, 58, 138, 0.05) 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .legal-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .legal-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+        }
+
+        .legal-content {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .legal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .legal-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .legal-section h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .legal-section h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 1.2rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .legal-section ul, .legal-section ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.8rem;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.02));
+            border-radius: 8px;
+            padding: 25px;
+            margin: 2rem 0;
+            border-left: 4px solid #ef4444;
+        }
+
+        .warning-box h4 {
+            color: #ef4444;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.02));
+            border-radius: 8px;
+            padding: 25px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .info-box h4 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-blue);
+            animation: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            nav { position: fixed; top: var(--header-height); left: -100%; width: 80%; height: calc(100vh - var(--header-height)); background: white; transition: var(--transition); box-shadow: var(--shadow); }
+            nav.active { left: 0; }
+            nav ul { flex-direction: column; padding: 30px; }
+            nav li { margin: 0 0 20px 0; }
+            .legal-hero h1 { font-size: 2.5rem; }
+            .legal-section { padding: 30px; }
+            .legal-section h2 { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 576px) {
+            .legal-hero h1 { font-size: 2rem; }
+            .container { padding: 0 15px; }
+            .legal-section { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">N&S</div>
+                Needs & Solutions
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="refund.html" class="active">Legal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Refund Policy Hero Section ===== -->
+    <section class="legal-hero">
+        <div class="container">
+            <h1>Refund Policy</h1>
+            <p>Our strict no-refund policy and payment terms for all services and projects.</p>
+        </div>
+    </section>
+
+    <!-- ===== Refund Policy Content ===== -->
+    <section class="legal-content">
+        <div class="container legal-container">
+            <div class="legal-section">
+                <h2>Refund and Cancellation Policy</h2>
+                <p class="last-updated"><strong>Effective Date:</strong> January 1, 2024</p>
+                
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-circle"></i> Strict No Refund Policy</h4>
+                    <p><strong>ALL PAYMENTS MADE TO NEEDS & SOLUTIONS ARE NON-REFUNDABLE.</strong> By making a payment, you acknowledge that you have read, understood, and agreed to this no-refund policy in its entirety.</p>
+                </div>
+
+                <h3>1. No Refund Policy</h3>
+                <div class="warning-box">
+                    <h4><i class="fas fa-ban"></i> Absolutely No Refunds</h4>
+                    <p><strong>We do not provide refunds under any circumstances, including but not limited to:</strong></p>
+                    <ul>
+                        <li>Project cancellation by client at any stage</li>
+                        <li>Dissatisfaction with project outcomes or deliverables</li>
+                        <li>Change of mind, requirements, or business direction</li>
+                        <li>Technical issues, compatibility problems, or bugs</li>
+                        <li>Delays in project completion</li>
+                        <li>Business failure or financial difficulties</li>
+                        <li>Personal circumstances or emergencies</li>
+                        <li>Any other reason whatsoever</li>
+                    </ul>
+                </div>
+
+                <h3>2. Payment Structure</h3>
+                <p><strong>All projects follow this payment structure:</strong></p>
+                <ul>
+                    <li><strong>50% Advance Payment:</strong> Required before project initiation</li>
+                    <li><strong>50% Final Payment:</strong> Required before project delivery</li>
+                    <li><strong>All payments are non-refundable</strong></li>
+                    <li>Additional charges apply for scope changes</li>
+                </ul>
+
+                <h3>3. What You Are Paying For</h3>
+                <div class="info-box">
+                    <h4><i class="fas fa-code"></i> Service-Based Payment</h4>
+                    <p><strong>You are paying for:</strong></p>
+                    <ul>
+                        <li>Our time, expertise, and effort</li>
+                        <li>Technical consultation and planning</li>
+                        <li>Development and implementation work</li>
+                        <li>Project management and coordination</li>
+                        <li>Quality assurance and testing</li>
+                    </ul>
+                    <p><strong>You are NOT paying for:</strong></p>
+                    <ul>
+                        <li>Guaranteed results or outcomes</li>
+                        <li>Specific business success metrics</li>
+                        <li>Future maintenance or support</li>
+                        <li>Performance guarantees</li>
+                    </ul>
+                </div>
+
+                <h3>4. Project Cancellation</h3>
+                <p><strong>If you choose to cancel a project:</strong></p>
+                <ul>
+                    <li>All payments made are non-refundable</li>
+                    <li>You forfeit all work completed to date</li>
+                    <li>We are not obligated to deliver any incomplete work</li>
+                    <li>You remain responsible for any outstanding payments</li>
+                </ul>
+
+                <h3>5. Scope Changes and Additional Work</h3>
+                <p><strong>Additional charges apply for:</strong></p>
+                <ul>
+                    <li>Changes to original requirements</li>
+                    <li>Additional features or functionality</li>
+                    <li>Extended support or maintenance</li>
+                    <li>Revisions beyond agreed scope</li>
+                </ul>
+
+                <h3>6. Dispute Resolution Process</h3>
+                <p><strong>If you have concerns about a project:</strong></p>
+                <ol>
+                    <li>Contact us immediately with specific concerns</li>
+                    <li>Allow us reasonable time to address issues</li>
+                    <li>Work collaboratively to find solutions</li>
+                    <li>Understand that refunds are not an option</li>
+                </ol>
+
+                <h3>7. Client Responsibilities</h3>
+                <p><strong>Before making payment, ensure:</strong></p>
+                <ul>
+                    <li>You have read and understood all project requirements</li>
+                    <li>You agree with the project scope and timeline</li>
+                    <li>You have budgeted appropriately for the project</li>
+                    <li>You understand this no-refund policy</li>
+                    <li>You are committed to seeing the project through</li>
+                </ul>
+
+                <h3>8. Payment Methods and Processing</h3>
+                <p>We accept payments through:</p>
+                <ul>
+                    <li>Bank transfers</li>
+                    <li>Online payment gateways</li>
+                    <li>Other agreed methods</li>
+                </ul>
+                <p>All payments are processed securely. We are not responsible for payment processor fees or issues.</p>
+
+                <h3>9. Late Payments</h3>
+                <p><strong>For late payments:</strong></p>
+                <ul>
+                    <li>Project work may be paused</li>
+                    <li>Late fees may apply</li>
+                    <li>Legal action may be taken for non-payment</li>
+                    <li>No refunds for paused or terminated projects</li>
+                </ul>
+
+                <h3>10. Digital Products and Templates</h3>
+                <p><strong>For digital products:</strong></p>
+                <ul>
+                    <li>No refunds after download or access</li>
+                    <li>No refunds for compatibility issues</li>
+                    <li>No refunds for change of mind</li>
+                    <li>All sales are final</li>
+                </ul>
+
+                <h3>11. Consulting and Advisory Services</h3>
+                <p><strong>For consulting services:</strong></p>
+                <ul>
+                    <li>No refunds for time spent</li>
+                    <li>No refunds for advice given</li>
+                    <li>No refunds for implementation results</li>
+                    <li>Payment is for time and expertise, not outcomes</li>
+                </ul>
+
+                <h3>12. Exceptions</h3>
+                <div class="warning-box">
+                    <h4><i class="fas fa-times"></i> No Exceptions</h4>
+                    <p><strong>There are NO EXCEPTIONS to this no-refund policy.</strong> By making payment, you waive any right to request or expect a refund under any circumstances.</p>
+                </div>
+
+                <h3>13. Contact for Payment Issues</h3>
+                <p>For payment-related questions (NOT refund requests):</p>
+                <ul>
+                    <li>Email: payments@needs-solutions.com</li>
+                    <li>Phone: [Your Business Phone]</li>
+                </ul>
+
+                <div class="last-updated">
+                    <p><strong>Last Updated:</strong> January 1, 2024</p>
+                    <p><strong>By making a payment to Needs & Solutions, you certify that you have read, understood, and agreed to this Refund Policy.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">N&S</div>
+                        Needs & Solutions
+                    </div>
+                    <p>Providing premium technology services and innovative project solutions for businesses worldwide since 2015.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Legal Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Needs & Solutions. All rights reserved.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">All legal documents are legally binding.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Same JavaScript as terms.html
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 25px rgba(0, 0, 100, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 100, 0.05)';
+                header.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>

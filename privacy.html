@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Needs & Solutions</title>
+    <meta name="description" content="Privacy Policy explaining how Needs & Solutions collects, uses, and protects your data">
+    <meta name="keywords" content="privacy policy, data protection, GDPR, personal information">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Same CSS as terms.html, just changing the hero section */
+        /* Copy the entire CSS from terms.html and update these specific styles */
+        
+        .legal-hero {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.05) 0%, rgba(30, 58, 138, 0.05) 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .legal-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .legal-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+        }
+        
+      
+        /* Reuse your existing CSS with some modifications for legal pages */
+        :root {
+            --primary-blue: #0a2463;
+            --secondary-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --very-light-blue: #dbeafe;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --dark-gray: #1e293b;
+            --medium-gray: #64748b;
+            --light-gray: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 100, 0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --header-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 100, 0.05);
+            z-index: 1000;
+            height: var(--header-height);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            border-radius: 8px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            animation: logoPulse 4s infinite ease-in-out;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* Legal Page Specific Styles */
+        .legal-hero {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.05) 0%, rgba(30, 58, 138, 0.05) 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .legal-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .legal-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+        }
+
+        .legal-content {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .legal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .legal-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .legal-section h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .legal-section h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 1.2rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .legal-section ul, .legal-section ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.8rem;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.02));
+            border-radius: 8px;
+            padding: 25px;
+            margin: 2rem 0;
+            border-left: 4px solid #ef4444;
+        }
+
+        .warning-box h4 {
+            color: #ef4444;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.02));
+            border-radius: 8px;
+            padding: 25px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .info-box h4 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--primary-blue);
+            animation: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            nav { position: fixed; top: var(--header-height); left: -100%; width: 80%; height: calc(100vh - var(--header-height)); background: white; transition: var(--transition); box-shadow: var(--shadow); }
+            nav.active { left: 0; }
+            nav ul { flex-direction: column; padding: 30px; }
+            nav li { margin: 0 0 20px 0; }
+            .legal-hero h1 { font-size: 2.5rem; }
+            .legal-section { padding: 30px; }
+            .legal-section h2 { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 576px) {
+            .legal-hero h1 { font-size: 2rem; }
+            .container { padding: 0 15px; }
+            .legal-section { padding: 25px 20px; }
+        }
+    </style>
+   
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">N&S</div>
+                Needs & Solutions
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="privacy.html" class="active">Legal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Privacy Policy Hero Section ===== -->
+    <section class="legal-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>How we collect, use, and protect your personal information when you use our services.</p>
+        </div>
+    </section>
+
+    <!-- ===== Privacy Policy Content ===== -->
+    <section class="legal-content">
+        <div class="container legal-container">
+            <div class="legal-section">
+                <h2>Privacy Policy</h2>
+                <p class="last-updated"><strong>Effective Date:</strong> January 1, 2024</p>
+                
+                <div class="info-box">
+                    <h4><i class="fas fa-shield-alt"></i> Your Privacy Matters</h4>
+                    <p>This Privacy Policy explains how Needs & Solutions ("we," "us," or "our") collects, uses, discloses, and protects your personal information when you use our website, services, or engage in projects with us.</p>
+                </div>
+
+                <h3>1. Information We Collect</h3>
+                <p><strong>We collect the following types of information:</strong></p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Name, email, phone number, company details</li>
+                    <li><strong>Project Information:</strong> Requirements, specifications, business details</li>
+                    <li><strong>Payment Information:</strong> Billing details, transaction history (processed securely by third-party processors)</li>
+                    <li><strong>Technical Information:</strong> IP address, browser type, device information, usage data</li>
+                    <li><strong>Communications:</strong> Emails, messages, support requests</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <p><strong>We use collected information for:</strong></p>
+                <ul>
+                    <li>Providing and improving our services</li>
+                    <li>Communicating about projects and services</li>
+                    <li>Processing payments and invoices</li>
+                    <li>Sending updates and marketing communications (with consent)</li>
+                    <li>Legal compliance and dispute resolution</li>
+                    <li>Security and fraud prevention</li>
+                </ul>
+
+                <h3>3. Data Protection and Security</h3>
+                <div class="info-box">
+                    <h4><i class="fas fa-lock"></i> Security Measures</h4>
+                    <p>We implement appropriate security measures to protect your data:</p>
+                    <ul>
+                        <li>Encryption of sensitive data</li>
+                        <li>Secure servers and infrastructure</li>
+                        <li>Limited access to personal information</li>
+                        <li>Regular security assessments</li>
+                    </ul>
+                    <p><strong>However, no method of transmission over the internet is 100% secure.</strong> We cannot guarantee absolute security.</p>
+                </div>
+
+                <h3>4. Data Sharing and Disclosure</h3>
+                <p><strong>We may share your information with:</strong></p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Payment processors, hosting providers, analytics services</li>
+                    <li><strong>Legal Authorities:</strong> When required by law or to protect our rights</li>
+                    <li><strong>Business Transfers:</strong> In case of merger, acquisition, or sale</li>
+                    <li><strong>With Your Consent:</strong> When you explicitly agree to sharing</li>
+                </ul>
+
+                <h3>5. Data Retention</h3>
+                <p>We retain your information:</p>
+                <ul>
+                    <li>As long as necessary for service provision</li>
+                    <li>As required by law or accounting requirements</li>
+                    <li>For legitimate business purposes</li>
+                    <li>Until you request deletion (subject to legal requirements)</li>
+                </ul>
+
+                <h3>6. Your Rights and Choices</h3>
+                <p><strong>You have the right to:</strong></p>
+                <ul>
+                    <li>Access your personal information</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Request deletion of your data</li>
+                    <li>Opt-out of marketing communications</li>
+                    <li>Withdraw consent where applicable</li>
+                </ul>
+
+                <h3>7. Cookies and Tracking Technologies</h3>
+                <p>We use cookies and similar technologies:</p>
+                <ul>
+                    <li>To improve website functionality</li>
+                    <li>For analytics and performance monitoring</li>
+                    <li>To remember preferences</li>
+                </ul>
+                <p>You can control cookies through your browser settings.</p>
+
+                <h3>8. Third-Party Links</h3>
+                <p>Our website may contain links to third-party sites. We are not responsible for their privacy practices.</p>
+
+                <h3>9. Children's Privacy</h3>
+                <p>Our services are not directed to children under 18. We do not knowingly collect children's data.</p>
+
+                <h3>10. International Data Transfers</h3>
+                <p>Your information may be transferred to and processed in countries with different data protection laws.</p>
+
+                <h3>11. Changes to Privacy Policy</h3>
+                <p>We may update this policy. Continued use of services constitutes acceptance of changes.</p>
+
+                <h3>12. Contact Us</h3>
+                <p>For privacy-related questions or requests:</p>
+                <ul>
+                    <li>Email: privacy@needs-solutions.com</li>
+                    <li>Website: www.needs-solutions.com</li>
+                    <li>Address: [Your Business Address]</li>
+                </ul>
+
+                <div class="last-updated">
+                    <p><strong>Last Updated:</strong> January 1, 2024</p>
+                    <p>This Privacy Policy is part of our Terms and Conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">N&S</div>
+                        Needs & Solutions
+                    </div>
+                    <p>Providing premium technology services and innovative project solutions for businesses worldwide since 2015.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Legal Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="projects.html">All Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Needs & Solutions. All rights reserved.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">All legal documents are legally binding.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Same JavaScript as terms.html
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 25px rgba(0, 0, 100, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 100, 0.05)';
+                header.style.height = '80px';
+            }
+        });
+    </script>
+</body>
+</html>
